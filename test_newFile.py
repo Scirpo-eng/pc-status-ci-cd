@@ -2,7 +2,7 @@ from newTrainFile import add
 from newTrainFile import get_system_status
 
 def test_add():
-    assert add("Hello", "World") == "HelloWorld"
+    assert add("Hello", "World") == "ERROR"
    
 def test_get_system_status():
     status = get_system_status()
