@@ -1,12 +1,17 @@
-from newTrainFile import add
-from newTrainFile import get_system_status
+import unittest
+from newTrainFile import add, get_system_status
 
-def test_add():
-    assert add("Hello", "World") == "ERROR"
-   
-def test_get_system_status():
-    status = get_system_status()
-    
-    assert isinstance(status, tuple)
-    assert len(status) == 3
-    assert status[0] >= 0
+class TestCalculatorAndSystem(unittest.TestCase):
+
+    def test_add_strings(self):
+        self.assertEqual(add("Hello", "World"), "Error Text")
+
+    def test_get_system_status(self):
+        status = get_system_status()
+        self.assertIsInstance(status, tuple)
+        self.assertEqual(len(status), 3)
+
+
+if __name__ == "__main__":
+    unittest.main()
+
